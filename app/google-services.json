@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "495044804005",
+    "firebase_url": "https://autoamigos-21da9-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "autoamigos-21da9",
+    "storage_bucket": "autoamigos-21da9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495044804005:android:d9175b333232500cd47c4c",
+        "android_client_info": {
+          "package_name": "com.example.autoamigos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeYxs6rz9yXd7nUl52gwjxeAYWmrlm2lo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
