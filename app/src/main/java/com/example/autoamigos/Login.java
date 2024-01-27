@@ -46,7 +46,6 @@ public class Login extends AppCompatActivity {
 
         GoogleSignInOptions gso= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
-
 //                .requestIdToken("495044804005-fdp0on1me4pfoh30d407qqif9fnv85nj.apps.googleusercontent.com")
                 .requestEmail().build();
         mGoogleSignInClient = GoogleSignIn.getClient(this,gso);
@@ -64,7 +63,7 @@ public class Login extends AppCompatActivity {
         startActivityForResult(intent,RC_SIGN_IN);
     }
 
-    
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
         super.onActivityResult(requestCode,resultCode,data);
@@ -103,7 +102,7 @@ public class Login extends AppCompatActivity {
 
                             database.getReference().child("users").child(user.getUid()).setValue(map);
 
-                            Intent intent = new Intent(Login.this,Hello.class);
+                            Intent intent = new Intent(Login.this,MainActivity.class);
                             startActivity(intent);
                         }else{
                             Toast.makeText(Login.this,"wrong",Toast.LENGTH_SHORT).show();
