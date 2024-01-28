@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v.getId() == R.id.btnToLogin) {
             Intent i = new Intent(this, LoginActivity.class);
             startActivity(i);
+        }else if(v.getId()==R.id.btnExplore){
+            Intent i = new Intent(this,AllCarsActivity.class);
+            startActivity(i);
         }
     }
 
@@ -59,10 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 RecyclerView recyclerView = findViewById(R.id.recyclerView);
                 recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
-//                CarAdapter adapter = new CarAdapter(getApplicationContext(), carList);
                 CarAdapter adapter = new CarAdapter(getApplicationContext(), carList, car -> {
-                    // Handle the click event
-                    // For example, start a new activity with the car details
                     Intent intent = new Intent(MainActivity.this, CarDetailActivity.class);
                     intent.putExtra("car_id", car.getCar_id()); // Assuming each car has an ID or some identifier
                     startActivity(intent);
@@ -75,7 +75,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onCancelled(DatabaseError databaseError) {
                 // Handle possible errors.
             }
-        });
+        })
+
+
+
+        ;
 
     }
 

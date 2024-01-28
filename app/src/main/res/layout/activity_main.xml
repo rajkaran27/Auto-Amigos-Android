@@ -43,9 +43,10 @@
         app:cardBackgroundColor="#54A6FF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354">
+        app:layout_constraintVertical_bias="0.339">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -53,15 +54,16 @@
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="305dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="28dp"
+                android:layout_width="281dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/outfit"
                 android:text="The Best Platform to Buy Cars"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintHorizontal_bias="0.363"
+                app:layout_constraintHorizontal_bias="0.406"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -87,8 +89,10 @@
                 android:layout_marginBottom="29dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@drawable/lfa" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -97,14 +101,15 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="345dp"
-        android:layout_height="297dp"
+        android:layout_height="246dp"
         android:layout_gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialCardView"
-        app:layout_constraintVertical_bias="0.608" />
+        app:layout_constraintVertical_bias="0.49" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlinedTextField"
@@ -114,20 +119,35 @@
         android:layout_marginStart="33dp"
         android:layout_marginTop="96dp"
         android:layout_marginEnd="33dp"
-        android:layout_marginBottom="573dp"
         android:hint="Search"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/materialCardView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="51dp" />
+            android:layout_height="50dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="318dp"
+        android:fontFamily="@font/outfit"
+        android:text="Recommended"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView"
+        app:layout_constraintVertical_bias="0.529" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

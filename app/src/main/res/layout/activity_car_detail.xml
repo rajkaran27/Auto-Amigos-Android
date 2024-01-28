@@ -21,6 +21,7 @@
         android:layout_width="353dp"
         android:layout_height="385dp"
         app:cardBackgroundColor="#FFFFFF"
+        app:cardElevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
@@ -34,18 +35,18 @@
 
             <TextView
                 android:id="@+id/txtModel"
-                android:layout_width="272dp"
-                android:layout_height="48dp"
+                android:layout_width="308dp"
+                android:layout_height="62dp"
                 android:fontFamily="@font/outfit"
                 android:textAlignment="viewStart"
                 android:textSize="27sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.213"
+                app:layout_constraintHorizontal_bias="0.422"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.057" />
+                app:layout_constraintVertical_bias="0.049" />
 
             <TextView
                 android:id="@+id/txtDesc"
@@ -103,8 +104,10 @@
                 android:text="Transmission"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.666"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -154,8 +157,8 @@
 
             <Button
                 android:id="@+id/btnBuy"
-                android:layout_width="135dp"
-                android:layout_height="46dp"
+                android:layout_width="148dp"
+                android:layout_height="70dp"
                 android:layout_marginTop="283dp"
                 android:layout_marginBottom="24dp"
                 android:backgroundTint="#3563E9"
@@ -164,7 +167,7 @@
                 android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.926"
+                app:layout_constraintHorizontal_bias="0.921"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0" />

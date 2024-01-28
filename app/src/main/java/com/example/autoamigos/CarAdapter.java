@@ -43,6 +43,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
         holder.textViewCategory.setText(car.getCategory_name());
         holder.textViewPrice.setText('$'+(String.valueOf(car.getPrice())));
         Glide.with(context).load(car.getImage_url()).into(holder.imageViewCar);
+        Glide.with(context).load(car.getBrand_image()).into(holder.imgBrand);
 
         holder.btnMore.setOnClickListener(v -> {
             if (listener != null) {
@@ -62,6 +63,8 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
         public TextView textViewPrice;
 
         public ImageView imageViewCar;
+        public ImageView imgBrand;
+
         // Other views
         public Button btnMore;
 
@@ -71,6 +74,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
             textViewCategory = itemView.findViewById(R.id.textViewCategory);
             textViewPrice = itemView.findViewById(R.id.textViewPrice);
             imageViewCar = itemView.findViewById(R.id.imageViewCar);
+            imgBrand = itemView.findViewById(R.id.imgBrand);
             btnMore = itemView.findViewById(R.id.btnMore);
         }
     }

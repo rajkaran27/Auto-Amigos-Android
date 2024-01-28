@@ -37,7 +37,6 @@ public class CarDetailActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             if (dataSnapshot.exists()) {
-                                // Assuming each carId has a unique entry and your car object has a proper constructor and getters
                                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                                     Car car = child.getValue(Car.class);
                                     ImageView imageViewCar = findViewById(R.id.imgCar);
@@ -55,6 +54,7 @@ public class CarDetailActivity extends AppCompatActivity {
                                     txtCap.setText(car.getCapacity());
                                     txtTrans.setText(car.getTransmission());
                                     txtPrice.setText("$"+car.getPrice());
+
                                     Glide.with(CarDetailActivity.this)
                                             .load(car.getImage_url())
                                             .into(imageViewCar);
