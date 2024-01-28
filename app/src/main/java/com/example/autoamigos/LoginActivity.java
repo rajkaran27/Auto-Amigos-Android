@@ -27,7 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
     Button googleAuth;
@@ -45,8 +45,8 @@ public class Login extends AppCompatActivity {
         database=FirebaseDatabase.getInstance();
 
         GoogleSignInOptions gso= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                //ignore this error
                 .requestIdToken(getString(R.string.default_web_client_id))
-//                .requestIdToken("495044804005-fdp0on1me4pfoh30d407qqif9fnv85nj.apps.googleusercontent.com")
                 .requestEmail().build();
         mGoogleSignInClient = GoogleSignIn.getClient(this,gso);
 
@@ -102,10 +102,10 @@ public class Login extends AppCompatActivity {
 
                             database.getReference().child("users").child(user.getUid()).setValue(map);
 
-                            Intent intent = new Intent(Login.this,MainActivity.class);
+                            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                             startActivity(intent);
                         }else{
-                            Toast.makeText(Login.this,"wrong",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,"wrong",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

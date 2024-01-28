@@ -2,6 +2,7 @@ package com.example.autoamigos;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -13,25 +14,36 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // Launch the layout -> splash.xml
         setContentView(R.layout.splash_screen);
-        Thread splashThread = new Thread() {
 
-            public void run() {
-                try {
-                    // sleep time in milliseconds (3000 = 3sec)
-                    sleep(3000);
-                }  catch(InterruptedException e) {
-                    // Trace the error
-                    e.printStackTrace();
-                } finally
-                {
-                    // Launch the MainActivity class
-                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
-                    startActivity(intent);
-                }
 
+        new Handler().postDelayed(new Runnable(){
+            @Override
+            public void run(){
+                Intent intent = new Intent(SplashScreen.this,MainActivity.class);
+                startActivity(intent);
+                finish();
             }
-        };
-        // To Start the thread
-        splashThread.start();
+        },3000);
+
+//        Thread splashThread = new Thread() {
+//
+//            public void run() {
+//                try {
+//                    // sleep time in milliseconds (3000 = 3sec)
+//                    sleep(3000);
+//                }  catch(InterruptedException e) {
+//                    // Trace the error
+//                    e.printStackTrace();
+//                } finally
+//                {
+//                    // Launch the MainActivity class
+//                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+//                    startActivity(intent);
+//                }
+//
+//            }
+//        };
+//        // To Start the thread
+//        splashThread.start();
     }
 }

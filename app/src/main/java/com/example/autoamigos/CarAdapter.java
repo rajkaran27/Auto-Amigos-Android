@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,10 +18,16 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
 
     private Context context;
     private List<Car> carList;
+    private OnCarClickListener listener;
 
-    public CarAdapter(Context context, List<Car> carList) {
+    public CarAdapter(Context context, List<Car> carList, OnCarClickListener listener) {
         this.context = context;
         this.carList = carList;
+        this.listener = listener;
+    }
+
+    public interface OnCarClickListener {
+        void onCarClick(Car car);
     }
 
     @Override
@@ -36,6 +43,12 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
         holder.textViewCategory.setText(car.getCategory_name());
         holder.textViewPrice.setText('$'+(String.valueOf(car.getPrice())));
         Glide.with(context).load(car.getImage_url()).into(holder.imageViewCar);
+
+        holder.btnMore.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onCarClick(car);
+            }
+        });
     }
 
     @Override
@@ -50,6 +63,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
 
         public ImageView imageViewCar;
         // Other views
+        public Button btnMore;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -57,6 +71,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
             textViewCategory = itemView.findViewById(R.id.textViewCategory);
             textViewPrice = itemView.findViewById(R.id.textViewPrice);
             imageViewCar = itemView.findViewById(R.id.imageViewCar);
+            btnMore = itemView.findViewById(R.id.btnMore);
         }
     }
 }

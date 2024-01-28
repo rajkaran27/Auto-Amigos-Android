@@ -1,17 +1,13 @@
 package com.example.autoamigos;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
@@ -44,13 +40,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btnToLogin) {
-            Intent i = new Intent(this, Login.class);
+            Intent i = new Intent(this, LoginActivity.class);
             startActivity(i);
         }
     }
 
     public void getCars(){
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("cars"); // replace "cars" with your actual node name
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("cars");
         List<Car> carList = new ArrayList<>();
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -63,8 +59,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 RecyclerView recyclerView = findViewById(R.id.recyclerView);
                 recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
-                CarAdapter adapter = new CarAdapter(getApplicationContext(), carList);
+//                CarAdapter adapter = new CarAdapter(getApplicationContext(), carList);
+                CarAdapter adapter = new CarAdapter(getApplicationContext(), carList, car -> {
+                    // Handle the click event
+                    // For example, start a new activity with the car details
+                    Intent intent = new Intent(MainActivity.this, CarDetailActivity.class);
+                    intent.putExtra("car_id", car.getCar_id()); // Assuming each car has an ID or some identifier
+                    startActivity(intent);
+                });
                 recyclerView.setAdapter(adapter);
+
             }
 
             @Override
