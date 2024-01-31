@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "495044804005-90olgn97e311kh2niam9rs7a93bkubvq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.autoamigos",
+            "certificate_hash": "e1da77c318c6cc8fb08b85e0ad148f59db0814ad"
+          }
+        },
+        {
           "client_id": "495044804005-fdp0on1me4pfoh30d407qqif9fnv85nj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

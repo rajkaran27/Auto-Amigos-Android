@@ -53,7 +53,17 @@ public class LoginActivity extends AppCompatActivity {
         googleAuth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                googleSignIn();
+                signOutAndGoogleSignIn();
+            }
+        });
+    }
+
+    private void signOutAndGoogleSignIn() {
+        auth.signOut(); // Sign out from Firebase
+        mGoogleSignInClient.signOut().addOnCompleteListener(this, new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                googleSignIn(); // Initiate Google sign-in after Firebase sign-out
             }
         });
     }

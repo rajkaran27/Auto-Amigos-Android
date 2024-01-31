@@ -40,13 +40,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btnToLogin) {
-            Intent i = new Intent(this, LoginActivity.class);
-            startActivity(i);
+            // Check if the user is already logged in
+            FirebaseUser currentUser = mAuth.getCurrentUser();
+            if (currentUser != null) {
+                // User is already logged in, redirect to the profile page
+                Intent profileIntent = new Intent(this, ProfileActivity.class);
+                startActivity(profileIntent);
+            } else {
+                // User is not logged in, redirect to the login page
+                Intent loginIntent = new Intent(this, LoginActivity.class);
+                startActivity(loginIntent);
+            }
         }else if(v.getId()==R.id.btnExplore){
             Intent i = new Intent(this,AllCarsActivity.class);
             startActivity(i);
         }
     }
+
 
     public void getCars(){
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("cars");
