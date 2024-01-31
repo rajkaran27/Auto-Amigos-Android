@@ -24,7 +24,7 @@
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".CarDetailActivity"></activity>
         <activity android:name=".AllCarsActivity"></activity>
-
+        <activity android:name=".Filter"></activity>
         <activity android:name=".ProfileActivity"></activity>
 
     </application>
