@@ -79,7 +79,7 @@ public class PurchaseActivity extends AppCompatActivity {
                     });
 
         } else {
-            Log.e("PurchaseActivity", "No car ID provided in the intent");
+            Log.e("PurchaseActivity", "No car ID provided in the intent!");
         }
     }
 }
