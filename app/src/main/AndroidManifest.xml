@@ -25,6 +25,8 @@
         <activity android:name=".CarDetailActivity"></activity>
         <activity android:name=".AllCarsActivity"></activity>
 
+        <activity android:name=".ProfileActivity"></activity>
+
     </application>
 
 </manifest>
