@@ -73,4 +73,9 @@ public class Car {
     public String getBrand_image() {
         return brand_image;
     }
+
+    public int getTax() {
+        double tax = this.price * 0.08;
+        return (int) Math.floor(tax);
+    }
 }
