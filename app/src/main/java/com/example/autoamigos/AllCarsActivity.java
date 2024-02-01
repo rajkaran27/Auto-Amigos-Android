@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,7 +37,7 @@ public class AllCarsActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         if(v.getId()== R.id.btnFilter){
-            Intent intent = new Intent(this, Filter.class);
+            Intent intent = new Intent(this, FilterActivity.class);
             startActivity(intent);
         }
     }
@@ -93,24 +92,29 @@ public class AllCarsActivity extends AppCompatActivity implements View.OnClickLi
 
 
     public void getCars() {
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("cars");
+        if (getIntent().hasExtra("filtered_car_list")) {
+            carList = (List<Car>) getIntent().getSerializableExtra("filtered_car_list");
+            setupRecyclerView(carList);
+        } else {
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("cars");
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                carList.clear();
-                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    Car car = postSnapshot.getValue(Car.class);
-                    carList.add(car);
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    carList.clear();
+                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                        Car car = postSnapshot.getValue(Car.class);
+                        carList.add(car);
+                    }
+                    setupRecyclerView(carList);
                 }
-                setupRecyclerView(carList);
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Handle possible errors.
-            }
-        });
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Handle possible errors.
+                }
+            });
+        }
     }
 
     private void setupRecyclerView(List<Car> carList) {

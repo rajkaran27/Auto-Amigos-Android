@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btn"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:layout_editor_absoluteX="0dp"
@@ -17,10 +18,10 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintVertical_bias="0.044" />
 
     <TextView
         android:id="@+id/textView5"
@@ -32,25 +33,27 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.171" />
+        app:layout_constraintVertical_bias="0.151" />
 
     <TextView
         android:id="@+id/textView54"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="283dp"
+        android:layout_marginBottom="470dp"
         android:fontFamily="@font/outfit"
         android:text="Capacity"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintHorizontal_bias="0.978"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
     <TextView
         android:id="@+id/textView55"
@@ -60,46 +63,307 @@
         android:text="Brand"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="363dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="134dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="510dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioGroup
+            android:id="@+id/Category"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/sedan"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/sedan"
+                android:buttonTint="#00FFFFFF"
+                android:gravity="center"
+                android:tag="Sedan" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/outfit"
+                android:gravity="center"
+                android:text="Sedan" />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
+
+
+            <RadioButton
+                android:id="@+id/Coupe"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:background="@drawable/coupe"
+                android:buttonTint="#00FFFFFF"
+                android:gravity="center"
+                android:tag="Coupe" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/outfit"
+                android:gravity="center"
+                android:text="Coupe" />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
+
+
+            <RadioButton
+                android:id="@+id/Sport"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:background="@drawable/sports"
+                android:buttonTint="#00FFFFFF"
+                android:gravity="center"
+                android:tag="Sport" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/outfit"
+                android:gravity="center"
+                android:text="Sport" />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
+
+
+            <RadioButton
+                android:id="@+id/SUV"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:background="@drawable/suv"
+                android:buttonTint="#00FFFFFF"
+                android:tag="SUV" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/outfit"
+                android:gravity="center"
+                android:text="SUV" />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/Electric"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:background="@drawable/electric"
+                android:buttonTint="#00FFFFFF"
+                android:tag="Electric"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:fontFamily="@font/outfit"
+                android:gravity="center"
+                android:text="Electric"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Electric" />
+        </RadioGroup>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="363dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="262dp"
+        android:layout_marginBottom="382dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.44" />
+        app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/textView56"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="411dp"
-        android:layout_marginEnd="326dp"
-        android:layout_marginBottom="293dp"
+        <CheckBox
+            android:id="@+id/cap2"
+            android:layout_width="74dp"
+            android:layout_height="match_parent"
+            android:text="2" />
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="match_parent" />
+        <CheckBox
+            android:id="@+id/cap4"
+            android:layout_width="74dp"
+            android:layout_height="match_parent"
+            android:text="4" />
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="match_parent" />
+        <CheckBox
+            android:id="@+id/cap5"
+            android:layout_width="74dp"
+            android:layout_height="match_parent"
+            android:text="5" />
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="match_parent" />
+        <CheckBox
+            android:id="@+id/cap7"
+            android:layout_width="74dp"
+            android:layout_height="match_parent"
+            android:text="7" />
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView3"
+        android:layout_width="359dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="398dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="236dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioGroup
+            android:id="@+id/Brand"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/Honda"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/honda"
+                android:buttonTint="#00FFFFFF"
+                android:tag="Honda"
+
+                />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/Toyota"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:background="@drawable/toyota"
+                android:buttonTint="#00FFFFFF"
+                android:gravity="center"
+                android:tag="Toyota"
+
+                />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/Lexus"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:background="@drawable/lexus"
+                android:buttonTint="#00FFFFFF"
+                android:gravity="center"
+                android:tag="Lexus" />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/Ferrari"
+                android:layout_width="45dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ferrari"
+                android:buttonTint="#00FFFFFF"
+                android:gravity="center"
+                android:tag="Ferrari" />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/Porsche"
+                android:layout_width="45dp"
+                android:layout_height="50dp"
+                android:background="@drawable/porsche"
+                android:buttonTint="#00FFFFFF"
+                android:gravity="center"
+                android:tag="Porsche" />
+        </RadioGroup>
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/btnFilterRes"
+        android:layout_width="162dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="233dp"
+        android:layout_marginTop="541dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="133dp"
         android:fontFamily="@font/outfit"
-        android:text="Price"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="20sp"
+        android:onClick="onClick"
+        android:text="Filter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="369dp"
-        android:layout_height="51dp"
-        android:orientation="horizontal"
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="162dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="541dp"
+        android:layout_marginEnd="204dp"
+        android:layout_marginBottom="133dp"
+        android:backgroundTint="#75AAAAAA"
+        android:fontFamily="@font/outfit"
+        android:onClick="onClick"
+        android:text="Clear"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="266dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="CheckBox" />
-    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

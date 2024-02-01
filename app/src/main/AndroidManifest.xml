@@ -18,14 +18,13 @@
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".CarDetailActivity"></activity>
         <activity android:name=".AllCarsActivity"></activity>
-        <activity android:name=".Filter"></activity>
+        <activity android:name=".FilterActivity"></activity>
         <activity android:name=".PurchaseActivity"></activity>
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".Payment"></activity>

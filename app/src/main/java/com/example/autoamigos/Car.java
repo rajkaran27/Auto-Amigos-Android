@@ -1,6 +1,8 @@
 package com.example.autoamigos;
 
-public class Car {
+import java.io.Serializable;
+
+public class Car implements Serializable {
     private String brand_name;
     private int Key;
     private String capacity;
