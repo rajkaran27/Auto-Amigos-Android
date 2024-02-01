@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:elevation="8dp">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="350dp"
+        android:layout_height="659dp"
         android:layout_margin="2dp"
         app:cardElevation="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,8 +25,8 @@
 
             <ImageView
                 android:id="@+id/imgCarC"
-                android:layout_width="286dp"
-                android:layout_height="135dp"
+                android:layout_width="374dp"
+                android:layout_height="290dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.482"
@@ -36,14 +37,14 @@
 
             <TextView
                 android:id="@+id/txtModelM"
-                android:layout_width="297dp"
-                android:layout_height="31dp"
+                android:layout_width="308dp"
+                android:layout_height="91dp"
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="226dp"
                 android:layout_marginBottom="235dp"
                 android:fontFamily="@font/outfit"
-                android:textSize="22sp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -58,6 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/outfit"
+                android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.095"
@@ -65,33 +67,20 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.198" />
 
-            <TextView
-                android:id="@+id/txtPriceP"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/outfit"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.103"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.901" />
-
             <Button
                 android:id="@+id/btnSee"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="342dp"
+                android:layout_height="80dp"
                 android:fontFamily="@font/outfit"
-                android:text="Learn More"
                 android:onClick="onClick"
+                android:text="Learn More"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.923"
+                app:layout_constraintHorizontal_bias="0.52"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.931" />
+                app:layout_constraintVertical_bias="0.929" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

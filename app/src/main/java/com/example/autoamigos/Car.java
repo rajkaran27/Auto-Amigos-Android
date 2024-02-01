@@ -14,11 +14,12 @@ public class Car implements Serializable {
     private String model;
     private int price;
     private String transmission;
+    private String video;
     private int year;
 
     public Car() {
     }
-    public Car(String brand_name, String capacity, int car_id, String category_name, String description, String image_url, String model, int price, String transmission, int year,String brand_image) {
+    public Car(String brand_name, String capacity, int car_id, String category_name, String description, String image_url, String model, int price, String transmission, int year,String brand_image,String video) {
         this.brand_name = brand_name;
         this.capacity = capacity;
         this.car_id = car_id;
@@ -30,6 +31,15 @@ public class Car implements Serializable {
         this.transmission = transmission;
         this.year = year;
         this.brand_image=brand_image;
+        this.video = video;
+    }
+
+    public int getKey() {
+        return Key;
+    }
+
+    public String getVideo() {
+        return video;
     }
 
     public String getBrand_name() {

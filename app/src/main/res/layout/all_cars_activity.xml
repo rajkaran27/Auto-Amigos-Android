@@ -23,34 +23,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.142" />
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search"
-        android:layout_width="287dp"
-        android:layout_height="51dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/search_view_bg"
-        app:iconifiedByDefault="false"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.241"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:queryHint="Search" />
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
+            android:layout_width="287dp"
+            android:layout_height="51dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/search_view_bg"
+            app:iconifiedByDefault="false"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.241"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:queryHint="Search" />
 
-    <ImageButton
-        android:id="@+id/btnFilter"
-        android:layout_width="58dp"
-        android:layout_height="51dp"
-        android:background="@drawable/search_view_bg"
-        android:onClick="onClick"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
-        app:layout_constraintStart_toEndOf="@+id/search"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.63"
-        app:srcCompat="@drawable/filter" />
+        <ImageButton
+            android:id="@+id/btnFilter"
+            android:layout_width="58dp"
+            android:layout_height="51dp"
+            android:background="@drawable/search_view_bg"
+            android:onClick="onClick"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.166"
+            app:layout_constraintStart_toEndOf="@+id/search"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.63"
+            app:srcCompat="@drawable/filter" />
 
     <TextView
         android:id="@+id/txtNoResults"

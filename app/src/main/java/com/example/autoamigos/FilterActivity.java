@@ -72,15 +72,12 @@ public class FilterActivity extends AppCompatActivity {
     }
 
     private void queryFirebaseDatabase() {
-        // Retrieve selected filters
         String selectedCategory = getSelectedCategory();
         String selectedBrand = getSelectedBrand();
         String selectedCapacitiesString = selectedCapacities.toString().trim();
 
-        // Initialize the base query
         Query baseQuery = databaseReference;
 
-        // Add filters based on user selection
         if (!selectedCategory.isEmpty()) {
             baseQuery = baseQuery.orderByChild("category_name").equalTo(selectedCategory);
         }
@@ -104,9 +101,7 @@ public class FilterActivity extends AppCompatActivity {
                     Log.d("carmodel", "name" + car.getModel());
                 }
                 Intent intent = new Intent(FilterActivity.this, AllCarsActivity.class);
-                // Put the filtered car list as an extra using Serializable
                 intent.putExtra("filtered_car_list", (Serializable) carList);
-                // Start the AllCarsActivity
                 startActivity(intent);
             }
 

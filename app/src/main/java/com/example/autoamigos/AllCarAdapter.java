@@ -40,7 +40,6 @@ public class AllCarAdapter extends RecyclerView.Adapter<AllCarAdapter.ViewHolder
         Car car = carList.get(position);
         holder.txtModelM.setText(car.getModel());
         holder.txtCatC.setText(car.getCategory_name());
-        holder.txtPriceP.setText('$'+(String.valueOf(car.getPrice())));
         Glide.with(context).load(car.getImage_url()).into(holder.imgCarC);
 
         holder.btnSee.setOnClickListener(v -> {
@@ -58,7 +57,7 @@ public class AllCarAdapter extends RecyclerView.Adapter<AllCarAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView txtModelM;
         public TextView txtCatC;
-        public TextView txtPriceP;
+
 
         public ImageView imgCarC;
 
@@ -68,7 +67,6 @@ public class AllCarAdapter extends RecyclerView.Adapter<AllCarAdapter.ViewHolder
             super(itemView);
             txtModelM = itemView.findViewById(R.id.txtModelM);
             txtCatC = itemView.findViewById(R.id.txtCatC);
-            txtPriceP = itemView.findViewById(R.id.txtPriceP);
             imgCarC = itemView.findViewById(R.id.imgCarC);
             btnSee = itemView.findViewById(R.id.btnSee);
         }
