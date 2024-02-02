@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary"
+    android:background="#00FFFFFF"
     android:orientation="vertical"
     tools:context=".ProfileActivity">
 
@@ -13,19 +13,20 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/btnBack"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/back_btn"
-            android:padding="14dp"/>
-        
+            android:padding="14dp"
+            android:src="@drawable/back_arrow" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings"
             android:layout_centerInParent="true"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:text="Settings"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </RelativeLayout>
     
     <ScrollView
@@ -45,34 +46,37 @@
                 android:layout_marginTop="10dp"/>
 
             <TextView
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="Pranjal Prathap"
-                android:textColor="#FFFFFF"
+                android:text="Pj"
+                android:textColor="#000000"
                 android:textSize="22sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="+65 81686460"
-                android:textColor="#CCFFFFFF"
-                android:textSize="12sp"
-                android:layout_gravity="center"/>
+                android:textColor="#000000"
+                android:textSize="12sp" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/edit_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:paddingStart="30dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/round_back_secondary_100"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
                 android:text="Edit Profile"
                 android:textAllCaps="false"
-                android:textColor="@color/primary"
-                android:paddingEnd="30dp"/>
+                android:textColor="@color/primary" />
 
             <LinearLayout
                 android:background="@drawable/round_back_white10_20"

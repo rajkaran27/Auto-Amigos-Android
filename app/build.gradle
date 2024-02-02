@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.autoamigos"
-        minSdk 30
+        minSdk 29
         targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -27,7 +27,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
 }
 
 dependencies {
@@ -44,6 +43,7 @@ dependencies {
     implementation("com.google.android.gms:play-services-auth:20.7.0")
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation 'com.google.firebase:firebase-storage:20.3.0'
     implementation('com.paypal.checkout:android-sdk:1.2.1')
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0'
 
