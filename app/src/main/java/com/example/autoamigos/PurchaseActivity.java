@@ -11,6 +11,7 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.*;
 import com.paypal.checkout.PayPalCheckout;
 import com.paypal.checkout.config.CheckoutConfig;
@@ -19,11 +20,14 @@ import com.paypal.checkout.createorder.CurrencyCode;
 import com.paypal.checkout.createorder.UserAction;
 
 public class PurchaseActivity extends AppCompatActivity {
-
+    private TextInputEditText txtName, txtAddress, txtPhone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        txtName = findViewById(R.id.txtName);
+        txtAddress = findViewById(R.id.txtAddress);
+        txtPhone = findViewById(R.id.txtNum);
 
         setContentView(R.layout.activity_payment);
         Intent intent = getIntent();
@@ -48,6 +52,10 @@ public class PurchaseActivity extends AppCompatActivity {
                                     TextView txtTax = findViewById(R.id.txtGST);
                                     Button btnBuy = findViewById(R.id.btnBuyCar);
 
+                                    txtName = findViewById(R.id.txtName);
+                                    txtAddress = findViewById(R.id.txtAddress);
+                                    txtPhone = findViewById(R.id.txtNum);
+
                                     txtModel.setText(car.getModel());
                                     txtPrice.setText("$"+car.getPrice());
                                     txtTax.setText("$"+car.getTax());
@@ -57,10 +65,25 @@ public class PurchaseActivity extends AppCompatActivity {
                                             .load(car.getImage_url())
                                             .into(imageViewCar);
                                     btnBuy.setOnClickListener(v -> {
-                                        Intent purchaseIntent = new Intent(PurchaseActivity.this, Payment.class);
-                                        purchaseIntent.putExtra("car_price", car.getPrice());
-//                                        System.out.println(car.getPrice()); // passed to purchase intent
-                                        startActivity(purchaseIntent);
+                                            // All fields are filled, proceed to the payment page
+                                        String name = txtName.getText().toString();
+                                        String address = txtAddress.getText().toString();
+                                        String phone = txtPhone.getText().toString();
+
+                                        // Check if any of the fields is empty
+                                        if (name.isEmpty() || address.isEmpty() || phone.isEmpty()) {
+                                            // Display a message to the user indicating that all fields are required
+                                            Toast.makeText(PurchaseActivity.this, "Please fill in all the fields", Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            // All fields are filled, proceed to the payment page
+                                            Intent purchaseIntent = new Intent(PurchaseActivity.this, Payment.class);
+                                            purchaseIntent.putExtra("car_price", car.getPrice());
+                                            purchaseIntent.putExtra("name", name);
+                                            purchaseIntent.putExtra("address", address);
+                                            purchaseIntent.putExtra("phone", phone);
+                                            purchaseIntent.putExtra("car_id", carId);
+                                            startActivity(purchaseIntent);
+                                        }
                                     });
 
 

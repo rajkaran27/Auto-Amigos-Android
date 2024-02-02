@@ -43,9 +43,9 @@ public class CarDetailActivity extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = auth.getCurrentUser();
         Button btnBuy = findViewById(R.id.btnBuy);
-        if (currentUser == null) {
-            btnBuy.setVisibility(View.GONE);
-        }
+//        if (currentUser == null) {
+//            btnBuy.setVisibility(View.GONE);
+//        }
 
         ImageButton imageButton = findViewById(R.id.backBtn);
 
