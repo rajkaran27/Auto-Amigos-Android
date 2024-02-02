@@ -214,6 +214,7 @@
                         app:layout_constraintVertical_bias="0.111">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/txtName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
 
@@ -233,6 +234,7 @@
                         app:layout_constraintVertical_bias="0.135">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/txtAddress"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
 
@@ -252,6 +254,7 @@
                         app:layout_constraintVertical_bias="0.172">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/txtNum"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
 
